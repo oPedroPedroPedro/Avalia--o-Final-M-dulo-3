@@ -6,6 +6,7 @@ public class LojaQueExplode {
         Scanner scanner = new Scanner(System.in);
         Sistema sistema = new Sistema();
         int opcao;
+        String data = null;
         
         try {
             do{
@@ -131,7 +132,7 @@ public class LojaQueExplode {
                         System.out.println("-----------------------------------------------------------------------------------------------------");
                         System.out.println("                                          VENDAS POR PERÍODO                                         ");
                         System.out.println("-----------------------------------------------------------------------------------------------------");
-                        sistema.relatorio();
+                        sistema.relatorio(data);
 
                         System.out.print("\nPressione 'ENTER' para continuar.");
                         scanner.nextLine();
@@ -145,24 +146,24 @@ public class LojaQueExplode {
                         System.out.println("                                              FAZER VENDA                                            ");
                         System.out.println("-----------------------------------------------------------------------------------------------------");
                         System.out.print("Digite a data de hoje: ");
-                        String data = scanner.nextLine();
+                        data = scanner.nextLine();
                         if(data.matches("")){
                             System.out.println("\nA data não pode ser vazia!");
-                            System.out.println("\nPressione 'ENTER' para continuar.");
+                            System.out.print("\nPressione 'ENTER' para continuar.");
                             scanner.nextLine();
                             limpa();
                             break;
                         }
                         if(data.matches(".*[A-z].*")){
                             System.out.println("\nA data não pode conter letras (dd/mm/aaaa)");
-                            System.out.println("\nPressione 'ENTER' para continuar.");
+                            System.out.print("\nPressione 'ENTER' para continuar.");
                             scanner.nextLine();
                             limpa();
                             break;
                         }
                         if(!data.matches("\\d{2}/\\d{2}/\\d{4}")){
                             System.out.println("\nA data deve estar na ordem correta! (dd/mm/aaaa)");
-                            System.out.println("\nPressione 'ENTER' para continuar.");
+                            System.out.print("\nPressione 'ENTER' para continuar.");
                             scanner.nextLine();
                             limpa();
                             break;
@@ -180,7 +181,7 @@ public class LojaQueExplode {
                 }
 
                 if(opcao < 0 || opcao > 5){
-                    System.out.println("Opção Inválida! Pressione 'ENTER' para continuar!");
+                    System.out.print("Opção Inválida! Pressione 'ENTER' para continuar!");
                     scanner.nextLine();
                 }
 

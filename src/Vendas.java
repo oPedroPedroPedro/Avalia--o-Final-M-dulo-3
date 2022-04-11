@@ -70,7 +70,7 @@ public class Vendas {
     @Override
     public String toString() {
         return "\nData da venda: " + dataVenda + "  //  Nome do Produto Vendido: " + nomeVenda +
-            "  //  Valor do Produto: " + valorProduto +
-                "\nValor Total da Venda: " + valorVenda;
+            "  //  Valor do Produto: " + valorProduto + "\nQuantidade: " + quantidadeVenda +
+                "  //  Valor Total da Venda: " + valorVenda;
     }
 }

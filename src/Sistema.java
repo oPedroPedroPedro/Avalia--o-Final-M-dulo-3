@@ -59,10 +59,11 @@ public class Sistema implements Funcionalidades {
     }
 
     @Override
-    public void relatorio() {
+    public void relatorio(String data) {
         if ( vendas.isEmpty() ) {
             System.out.println("\nNenhuma venda Registrada!");
         } else {
+            System.out.println("Período de Emissão: " + data);
             for (Vendas venda : vendas) {
                 System.out.println( venda );
             }   
@@ -109,7 +110,7 @@ public class Sistema implements Funcionalidades {
                     }
                     if (resposta == 2){
                         System.out.println("\nVenda Cancelada!");
-                        System.out.println("\nPressione 'ENTER' para continuar.");
+                        System.out.print("\nPressione 'ENTER' para continuar.");
                         scanner.nextLine();
                         bug = false;
                     }
@@ -135,21 +136,21 @@ public class Sistema implements Funcionalidades {
                 System.out.println("                                                VENDA                                                ");
                 System.out.println("-----------------------------------------------------------------------------------------------------");
                 System.out.println( venda.toString() );
-                System.out.println("\nVenda realizada com sucesso! Pressione 'ENTER' para continuar!");
+                System.out.print("\nVenda realizada com sucesso! Pressione 'ENTER' para continuar.");
                 p.quantidadeEstoque -= venda.quantidadeVenda;
                 vendas.add( venda );
                 bug = false;
             }
             if (bug){
                 System.out.println("\nO Produto não foi Encontrado!");
-                System.out.println("\nPresseione 'ENTER' para continaur!");
+                System.out.print("\nPressione 'ENTER' para continuar.");
                 scanner.nextLine();
                 break;
             }
         }
         if (produtos.isEmpty()){
             System.out.println("\nNão Existem Produtos cadastrados para vender!");
-            System.out.println("\nPressione 'ENTER' para continuar!");
+            System.out.print("\nPressione 'ENTER' para continuar.");
             scanner.nextLine();
         }
     }
